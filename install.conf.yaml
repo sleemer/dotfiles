@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc: zshrc
+    ~/.config/starship.toml: starship.toml
+
+- create:
+    - ~/projects
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
