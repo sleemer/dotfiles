@@ -6,6 +6,7 @@
 - clean: ['~']
 
 - link:
+    ~/.zprofile: zprofile
     ~/.zshrc: zshrc
     ~/.config/starship.toml: starship.toml
 
