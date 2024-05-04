@@ -8,6 +8,7 @@
 - link:
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
+    ~/.tmux.conf: tmux.conf
     ~/.config/starship.toml: starship.toml
 
 - create:
