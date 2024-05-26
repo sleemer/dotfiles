@@ -1,5 +1,14 @@
 # Don't print a new line at the start of the prompt
 add_newline = false
 
+# left prompt
+format = """$all"""
+
+# right prompt
+right_format = """$cmd_duration"""
+
+[cmd_duration]
+format = " 󱦟 [$duration]($style)"
+
 [git_branch]
 symbol = " "
