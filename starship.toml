@@ -1,14 +1,17 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # Don't print a new line at the start of the prompt
 add_newline = false
 
 # left prompt
-format = """$all"""
+format = '$all'
 
 # right prompt
-right_format = """$cmd_duration"""
+right_format = '$cmd_duration'
 
 [cmd_duration]
-format = " 󱦟 [$duration]($style)"
+format = ' 󱦟 [$duration]($style)'
 
 [git_branch]
-symbol = " "
+symbol = ' '
