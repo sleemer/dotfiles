@@ -10,9 +10,11 @@
     ~/.zshrc: zshrc
     ~/.tmux.conf: tmux.conf
     ~/.config/starship.toml: starship.toml
+    ~/.config/nvim/init.lua: nvim/init.lua
 
 - create:
     - ~/projects
+    - ~/.config/nvim
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
