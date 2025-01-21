@@ -40,6 +40,12 @@ return {
           expander_highlight = "NeoTreeExpander",
         },
       },
+      window = {
+        position = "right",
+      },
+      filesystem = {
+        use_libuv_file_watcher = true,
+      },
     })
 
     local keymap = vim.keymap

@@ -4,7 +4,7 @@ return {
   main = "ibl",
   config = function()
     vim.opt.list = true
-    vim.opt.listchars = { space = "·" }
+    vim.opt.listchars = { tab = "»·", space = "·" }
 
     require("ibl").setup({
       indent = {
