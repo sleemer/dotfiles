@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   version = "*",
   config = function()
-    local highlights = require("nord.plugins.bufferline").akinsho()
+    local highlights = require("catppuccin.groups.integrations.bufferline").get()
     local bufferline = require("bufferline")
 
     bufferline.setup({
