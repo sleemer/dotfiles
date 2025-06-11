@@ -55,3 +55,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Fuzzy search
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 eval "$(fzf --zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/sleemer/.lmstudio/bin"
+# End of LM Studio CLI section
+

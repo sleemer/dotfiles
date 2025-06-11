@@ -1,4 +1,5 @@
 local opt = vim.opt
+local api = vim.api
 
 -- line numbers
 opt.relativenumber = false
@@ -9,6 +10,15 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+
+api.nvim_create_autocmd("FileType", {
+  pattern = { "go" },
+  callback = function()
+    vim.bo.expandtab = false
+    vim.bo.tabstop = 4
+    vim.bo.shiftwidth = 4
+  end
+})
 
 -- line wrapping
 opt.wrap = false

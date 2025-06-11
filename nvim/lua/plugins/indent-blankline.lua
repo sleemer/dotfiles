@@ -4,11 +4,12 @@ return {
   main = "ibl",
   config = function()
     vim.opt.list = true
-    vim.opt.listchars = { tab = "»·", space = "·" }
+    vim.opt.listchars = { tab = "··", space = "·" }
 
     require("ibl").setup({
       indent = {
         char = "│",
+        tab_char = "│",
       },
       whitespace = {
         remove_blankline_trail = true,
