@@ -1,5 +1,4 @@
 local opt = vim.opt
-local api = vim.api
 
 -- line numbers
 opt.relativenumber = false
@@ -10,25 +9,24 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
+opt.list = true
+opt.listchars = { tab = "··", space = "·", trail = "·" }
 
-api.nvim_create_autocmd("FileType", {
-  pattern = { "go" },
-  callback = function()
-    vim.bo.expandtab = false
-    vim.bo.tabstop = 4
-    vim.bo.shiftwidth = 4
-  end
-})
-
--- line wrapping
+-- basic settings
 opt.wrap = false
+opt.cursorline = true
+opt.scrolloff = 10
+opt.confirm = true
+
+-- preview substitutions live, as you type!
+opt.inccommand = "split"
+
+-- don't show the mode, since it's already in the status line
+opt.showmode = false
 
 -- search settings
 opt.ignorecase = true
 opt.smartcase = true
-
--- cursor line
-opt.cursorline = true
 
 -- clipboard
 opt.clipboard:append("unnamedplus")
@@ -40,7 +38,3 @@ opt.backspace = "indent,eol,start"
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-
--- split windows
-opt.splitright = true
-opt.splitbelow = true

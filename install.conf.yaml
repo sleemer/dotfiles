@@ -11,6 +11,7 @@
     ~/.tmux.conf: tmux.conf
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: nvim
+    ~/.config/ghostty: ghostty
 
 - create:
     - ~/projects

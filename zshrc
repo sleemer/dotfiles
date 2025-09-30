@@ -6,8 +6,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH"
 # Add dotnet tools
 export PATH="${HOME}/.dotnet/tools:$PATH"
-# Add krew (plugin manager for kubectl)
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # Add tmuxifier
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 
@@ -55,6 +53,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # Fuzzy search
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 eval "$(fzf --zsh)"
+
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sleemer/.lmstudio/bin"

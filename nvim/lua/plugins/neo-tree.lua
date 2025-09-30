@@ -1,30 +1,12 @@
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
+  version = "*",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
   config = function()
-    -- icons for diagnostic errors
-    vim.diagnostic.config({
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = " ",
-          [vim.diagnostic.severity.WARN] = " ",
-          [vim.diagnostic.severity.INFO] = " ",
-          [vim.diagnostic.severity.HINT] = "󰌵 ",
-        },
-        texthl = {
-          [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
-          [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
-          [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
-          [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
-        },
-      },
-    })
-
     require("neo-tree").setup({
       enable_git_status = true,
       enable_diagnostics = true,
