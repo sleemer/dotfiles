@@ -38,7 +38,6 @@ opt.backspace = "indent,eol,start"
 
 -- appearance
 opt.termguicolors = true
-opt.background = "dark"
 opt.signcolumn = "yes"
 
 -- split windows
