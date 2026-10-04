@@ -6,6 +6,9 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH"
 # Add dotnet tools
 export PATH="${HOME}/.dotnet/tools:$PATH"
+# Add go tools
+export PATH="${HOME}/go/bin:$PATH"
+
 # Add tmuxifier
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 
@@ -54,6 +57,11 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 eval "$(fzf --zsh)"
 
+
+. "$HOME/.local/bin/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/sleemer/.lmstudio/bin"
