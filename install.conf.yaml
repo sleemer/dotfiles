@@ -12,6 +12,7 @@
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: nvim
     ~/.config/ghostty: ghostty
+    ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
 
 - create:
     - ~/projects
