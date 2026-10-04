@@ -1,7 +1,15 @@
 theme = tokyonight
-shell-integration-features = no-cursor
 
 window-save-state = always
+
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+
+custom-shader = shaders/cursor_smear.glsl
+custom-shader = shaders/cursor_smear_fade.glsl
+
+background-opacity = 0.95
 
 font-feature = -calt
 font-size = 14
