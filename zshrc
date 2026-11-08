@@ -1,16 +1,12 @@
-. $(/opt/homebrew/bin/brew --prefix)/etc/profile.d/z.sh 
+. $HOMEBREW_PREFIX/etc/profile.d/z.sh
 # Add Visual Studio Code (code)
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-# Add ruby tools
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/lib/ruby/gems/3.3.0/bin:$PATH"
 # Add dotnet tools
 export PATH="${HOME}/.dotnet/tools:$PATH"
 # Add go tools
 export PATH="${HOME}/go/bin:$PATH"
-
-# Add tmuxifier
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+# Drop duplicate entries when one shell starts another
+typeset -U path fpath
 
 # Set neovim as a default editor
 export EDITOR='nvim'
@@ -18,16 +14,10 @@ export EDITOR='nvim'
 # Initialize starship command prompt
 eval "$(starship init zsh)"
 
-# Initialize tmuxifier
-eval "$(tmuxifier init -)"
-
-# Initialize zsh plugins
-if type brew &>/dev/null; then
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit && compinit
-fi
+# Initialize completions and suggestions
+FPATH=$HOMEBREW_PREFIX/share/zsh-completions:$FPATH
+autoload -Uz compinit && compinit
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Aliases
 alias ls='ls --color'
@@ -35,8 +25,8 @@ alias ll='ls --color -lA'
 
 # History setup
 HISTFILE=$HOME/.zhistory
-SAVEHIST=1000
-HISTSIZE=999
+SAVEHIST=10000
+HISTSIZE=11000
 setopt appendhistory
 setopt sharehistory
 setopt hist_expire_dups_first
@@ -49,7 +39,7 @@ setopt hist_verify
 bindkey "^[[A" history-search-backward
 bindkey "^[[B" history-search-forward
 
-# Complition styling
+# Completion styling
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -57,13 +47,5 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 eval "$(fzf --zsh)"
 
-
-. "$HOME/.local/bin/env"
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/sleemer/.lmstudio/bin"
-# End of LM Studio CLI section
-
+# Keep last: it has to wrap every widget defined above
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

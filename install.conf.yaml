@@ -8,10 +8,9 @@
 - link:
     ~/.zprofile: zprofile
     ~/.zshrc: zshrc
-    ~/.tmux.conf: tmux.conf
+    ~/.hushlogin: hushlogin
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: nvim
-    ~/.config/ghostty: ghostty
     ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
 
 - create:
