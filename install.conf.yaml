@@ -11,10 +11,17 @@
     ~/.hushlogin: hushlogin
     ~/.config/starship.toml: starship.toml
     ~/.config/nvim: nvim
-    ~/.config/opencode/opencode.jsonc: opencode/opencode.jsonc
 
 - create:
     - ~/projects
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  # brew is called by full path: Homebrew isn't on PATH until a new shell loads ~/.zprofile
+  - command: >-
+      /opt/homebrew/bin/brew trust --formula azure/kubelogin/kubelogin &&
+      /opt/homebrew/bin/brew bundle --file=Brewfile --no-upgrade
+    description: Installing Homebrew packages
+    stdin: true
+    stdout: true
+    stderr: true
