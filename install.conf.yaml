@@ -25,3 +25,10 @@
     stdin: true
     stdout: true
     stderr: true
+  # Language server for Claude Code's csharp-lsp plugin; ~/.dotnet/tools is on PATH via zshrc
+  - command: >-
+      /usr/local/share/dotnet/dotnet tool list -g | grep -q csharp-ls ||
+      /usr/local/share/dotnet/dotnet tool install -g csharp-ls
+    description: Installing csharp-ls
+    stdout: true
+    stderr: true

@@ -34,6 +34,7 @@ brew "dive"
 brew "trivy"
 
 # Dev tools
+cask "dotnet-sdk"
 brew "go-jsonnet"
 brew "jsonnet-bundler"
 brew "grpc"
@@ -59,3 +60,5 @@ brew "asitop"
 # AI
 cask "claude-code"
 brew "pi-coding-agent"
+# Language servers for Claude Code's LSP plugins; ./install adds csharp-ls with dotnet
+brew "gopls"
