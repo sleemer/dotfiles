@@ -1,0 +1,15 @@
+{
+  "name": "sleemer",
+  "description": "Personal Claude Code plugins from sleemer's dotfiles",
+  "owner": {
+    "name": "sleemer"
+  },
+  "plugins": [
+    {
+      "name": "jsonnet-lsp",
+      "description": "Jsonnet language server for code intelligence",
+      "source": "./plugins/jsonnet-lsp",
+      "category": "development"
+    }
+  ]
+}

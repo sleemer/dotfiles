@@ -32,3 +32,16 @@
     description: Installing csharp-ls
     stdout: true
     stderr: true
+  # Language server for the jsonnet-lsp plugin below; ~/go/bin is on PATH via zshrc
+  - command: >-
+      [ -x ~/go/bin/jsonnet-language-server ] ||
+      /opt/homebrew/bin/go install github.com/grafana/jsonnet-language-server@latest
+    description: Installing jsonnet-language-server
+    stdout: true
+    stderr: true
+  - command: >-
+      /opt/homebrew/bin/claude plugin marketplace add ~/.dotfiles/claude-plugins &&
+      /opt/homebrew/bin/claude plugin install jsonnet-lsp@sleemer
+    description: Installing Claude Code plugins from claude-plugins
+    stdout: true
+    stderr: true
